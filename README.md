@@ -32,7 +32,7 @@ The biggest things I learn from this project is how to use Firebase the backend 
 
 ### Useful resources
 
-- [Scrimba Course]([https://www.example.com](https://scrimba.com/learn/firebase) - This is the scrimba course I followed.
+- [Scrimba Course](https://scrimba.com/learn/firebase) - This is the scrimba course I followed.
 
 ## Author
 

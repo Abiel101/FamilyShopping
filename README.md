@@ -17,7 +17,7 @@ https://github.com/Abiel101/TheFuzzyShopList/assets/29215264/4433531b-e43f-42a3-
 
 ### Links
 
-- Live Site URL: [Live Demo]([https://your-live-site-url.com](https://fuzzy-shop-list.netlify.app/))
+- Live Site URL: [Live Demo](https://fuzzy-shop-list.netlify.app/)
 
 ### Built with
 

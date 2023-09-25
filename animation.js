@@ -1,7 +1,6 @@
-
 setTimeout(() => {
   animation();
-}, 250);
+}, 350);
 
 export function animation(){
     anime({
@@ -10,6 +9,7 @@ export function animation(){
       opacity: 1,
       easing: 'easeOutInExpo',
       delay: anime.stagger(50),
-      duraction: 1000, 
+      duraction: 1000,   
     })
+
 }

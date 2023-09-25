@@ -22,14 +22,17 @@ const shoppingListInDB = ref(database, "shoppingList"); //Reference the database
 const inputFieldEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
 const shoppingListEl = document.getElementById("shopping-list");
-const listItem = document.querySelector("li");
+const errorEl = document.getElementById('error');
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value;
-    
-    push(shoppingListInDB, inputValue);
-    clearInputFieldEl();
-    animation();
+    if (inputValue != ''){
+        push(shoppingListInDB, inputValue);
+        clearInputFieldEl();
+        errorEl.classList.remove('active');
+    }else{
+        errorEl.classList.add('active');
+    }
     // appendItemToShoppingListEl(inputValue);  //Since we are updating the data on the data base there is no need to append it again since we are getting all the data from the database.4
 })
 
@@ -52,7 +55,7 @@ onValue(shoppingListInDB, function(snapshot){
     }else{
         shoppingListEl.innerHTML = "No items here... yet"   ;
     }
-
+    animation()
 })  
 
 
@@ -80,14 +83,14 @@ function appendItemToShoppingListEl(item) {
     newEl.textContent = itemValue; //setting the text of the element to be the value
     newEl.classList.add('items'); //setting class for animations
 
-    //This give each item in the DB an event listener that once it has been doubleclicked it will delete the item with the specific ID. ****NOT WORKING****
     newEl.addEventListener('click', function(){
-        let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
-
-        remove(exactLocationOfItemInDB);
-        animation();
+        removeItemFromDB();
     })
+    function removeItemFromDB(){
+        let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
+        remove(exactLocationOfItemInDB);
+
+    }
 
     shoppingListEl.append(newEl); //Finally appending the new element into the list.
-
 }

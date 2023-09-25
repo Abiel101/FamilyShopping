@@ -2,14 +2,20 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-  background-color: #EEF0F4;
+  /* font-family: 'Rubik', sans-serif; */
+  font-family: "new-spirit", serif;
+  background-color: #ffdfcb;
+  user-select: none;
 }
 body{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  height: 100vh;
+  background-image: url(assets/blobs.png);
+  background-position: -50%;
+  background-size: 150%;
 }
 
 .container {
@@ -19,32 +25,36 @@ body{
   margin-bottom: 2rem;
 }
 
-img {
-  width: 150px;
-  margin: 0 auto;
+img{
+  width: 100%;
+  margin: 2rem auto;
 }
 
 input {
   color: #432000;
-  background-color: #DCE1EB;
+  background-color: #fffaf7;
+  font-family: "new-spirit", serif;
   border: 0;
   padding: 15px;
   border-radius: 8px;
   font-size: 20px;
   text-align: center;
-  font-family: 'Rubik', sans-serif;
   margin: 10px 0;
+}
+input::placeholder{
+  opacity: 0.5;
 }
 
 button {
-  color: #FDFDFD;
-  background-color: #AC485A;
+  color: #fcfcfc;
+  background-color: #AA312F;
   border: 0;
   padding: 15px;
   border-radius: 8px;
   font-size: 20px;
+  font-family: "new-spirit", serif;
+  font-weight: 700;
   text-align: center;
-  font-family: 'Rubik', sans-serif;
 }
 
 ul{
@@ -57,14 +67,24 @@ ul{
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  /* animation: fadeIn 1s forwards ease-in; */
 }
+/* @keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+} */
 
 li{
-  background-color: #DCE1EB;
+  background-color: #FFC48F;
+  color: #693508;
   padding: 15px;
   border-radius: 10px;
   transition: 0.5s;
-  flex-grow: 1;
+  flex-grow: 1; 
   font-size: 20px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -78,12 +98,31 @@ li{
   transform: scale(1.1);
 }
 
-@keyframes slideUp{
-  from{
-    bottom: -10px;
-    opacity: 0;
-  }
-  to{
-    bottom: 0;
-  }
+/* Intro */
+/* .intro{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFC48F;
+  color: #512f11;
+} */
+
+.inactive{
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  color: #AA312F;
+  font-size: 0.8rem;
+  position: relative;
+  bottom: -10px;
+}
+.active{
+  opacity: 1;
+  bottom: 0px;
 }
